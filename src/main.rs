@@ -1,12 +1,15 @@
 #[macro_use]
 extern crate log;
 extern crate openssl;
+extern crate regex;
+
+use std::error::Error;
 
 use https_client::HTTPSClient;
 
 mod https_client;
 
-fn main() -> std::io::Result<()> {
+fn main() -> Result<(), Box<dyn Error>> {
     env_logger::init();
 
     let client = HTTPSClient::new();
