@@ -1,5 +1,5 @@
 use std::error::Error;
-use std::fmt::{Display, Formatter};
+use std::fmt::Formatter;
 use std::fmt;
 use std::io::{Read, Write};
 use std::net::TcpStream;
@@ -17,8 +17,8 @@ fn find_first_blank_string(arr: &[&str]) -> Option<usize> {
 }
 
 pub(crate) struct HTTPSResponse {
-    header: Vec<String>,
-    body: String,
+    pub(crate) header: Vec<String>,
+    pub(crate) body: String,
 }
 
 pub(crate) struct HTTPSClient {
