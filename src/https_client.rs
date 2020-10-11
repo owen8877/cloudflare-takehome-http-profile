@@ -82,7 +82,7 @@ impl HTTPSClient {
         let mut res = vec![];
         stream.read_to_end(&mut res).unwrap();
         let response_raw = String::from_utf8_lossy(&res);
-        debug!("Raw response:\n {}", response_raw);
+        debug!("Raw response:\n{}", response_raw);
         let mut response_arr: Vec<&str> = response_raw.split("\r\n").collect();
         let split_index = find_first_blank_string(response_arr.as_slice()).ok_or(ParseError::new(response_raw.to_string()))?;
         let mut body = response_arr.split_off(split_index);

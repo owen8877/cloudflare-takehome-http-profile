@@ -7,7 +7,7 @@ edition = "2018"
 
 [dependencies]
 env_logger = "*"
-getopt-long = "0.2.2"
+getopts = "*"
 log = "*"
 openssl = "0.10.30"
 regex = "*"
